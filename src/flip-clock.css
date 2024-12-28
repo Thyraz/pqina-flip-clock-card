@@ -1,0 +1,60 @@
+ha-card {
+  --width: 95%;
+  --height: '';
+  --font: inherit;
+  --font-size: '';
+  --text-color: white;
+  --text-offset-horizontal: 0em;
+  --text-offset-vertical: 0em;
+  --front-flap-color: rgb(51, 51, 51);
+  --front-flap-shadow-opacity: 0.5;
+  --front-flap-gradient-opacity: 0.2;
+  --rear-flap-color: rgb(47, 47, 47);
+  --rear-flap-vertical-offset: 0.14em;
+}
+
+.card-content {
+  container-type: inline-size;
+}
+
+.clock {
+  width: min(var(--width), 100%);
+  padding-left: calc((100% - min(var(--width), 100%)) / 2.0);
+}
+
+.tick {
+  line-height: var(--height);
+}
+
+.tick-flip,
+.tick-text-inline {
+  font-size: var(--font-size);
+  letter-spacing: .06em;
+}
+
+.tick-flip-panel {
+  color: var(--text-color);
+  background-color: var(--front-flap-color);
+}
+
+.tick-flip {
+  font-family: var(--font);
+  border-radius: 0.15em;
+  margin-left: 0.025em;
+  margin-right: 0.025em;
+  width: 1.25em;
+}
+
+.tick-flip-panel-text-wrapper {
+  margin-top: calc(var(--text-offset-vertical) + 0.04em);
+  margin-left: calc(var(--text-offset-horizontal) - 0.15em);
+}
+
+.tick-flip-shadow {
+  box-shadow: 0em 0.075em 0.02em -0.03em rgb(0, 0, 0, var(--front-flap-shadow-opacity)), 0em var(--rear-flap-vertical-offset) 0em -0.05em var(--rear-flap-color);
+}
+
+.tick-flip-panel-back::after {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 1.0) 0.01em, rgba(0, 0, 0, 0.15) 0.015em, transparent 30%, rgba(255, 255, 255, var(--front-flap-gradient-opacity)) 100%);
+  border-radius: 0 0 0.15em 0.15em;
+}

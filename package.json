@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "source": "src/index.ts",
+  "module": "dist/flip-clock.js",
+  "targets": {
+    "module": {
+      "includeNodeModules": true
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.13.2",
+    "parcel": "^2.13.2"
+  },
+  "dependencies": {
+    "@pqina/flip": "^1.8.4",
+    "custom-card-helpers": "^1.9.0",
+    "home-assistant-js-websocket": "^9.4.0",
+    "lit": "^3.2.1"
+  }
+}
