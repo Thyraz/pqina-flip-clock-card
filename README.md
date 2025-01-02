@@ -1,8 +1,11 @@
 # Home Assistant Custom Card using PQINA Flip Clock
 
-![screenshot](docs/img/flip-clock.jpg)
-
 ## About
+
+Can be used on wall-tablets or smart-clocks to show the current time.
+
+Example:
+![photo](docs/img/photo.jpg)
 
 Created by Tobias Wiedenmann <https://github.com/Thyraz>
 
@@ -54,6 +57,8 @@ The configuration is currently only possible in YAML mode, but I hope to add a G
 ````YAML
 type: custom:pqina-flip-clock-card
 ````
+
+![screenshot](docs/img/flip-clock.jpg)
 
 ### Example with custom styling and navigation tap-action
 
