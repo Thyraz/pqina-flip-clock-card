@@ -5668,4 +5668,4 @@ window.customCards.push({
 });
 
 
-//# sourceMappingURL=flip-clock.js.map
+//# sourceMappingURL=pqina-flip-clock-card.js.map

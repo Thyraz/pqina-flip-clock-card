@@ -1,0 +1,7 @@
+{
+  "name": "PQINA flip clock",
+  "content_in_root": false,
+  "render_readme": true,
+  "filename": "pqina-flip-clock-card.js",
+  "homeassistant": "2023.9.0"
+}

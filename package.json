@@ -1,7 +1,7 @@
 {
   "type": "module",
   "source": "src/index.ts",
-  "module": "dist/flip-clock.js",
+  "module": "dist/pqina-flip-clock-card.js",
   "targets": {
     "module": {
       "includeNodeModules": true
