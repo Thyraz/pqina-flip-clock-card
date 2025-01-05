@@ -2,9 +2,9 @@
 
 ## About
 
-Can be used on wall-tablets or smart-clocks to show the current time.
+Created as wallpaper for wall-tablets or smart-clocks to show the current time.
 
-Example:
+Example: (_Date and temperature are not part of this card._)
 ![photo](docs/img/photo.jpg)
 
 Created by Tobias Wiedenmann <https://github.com/Thyraz>
@@ -20,7 +20,11 @@ https://buymeacoffee.com/rikschennink
 
 ### Through HACS (recommended)
 
-### Manual
+Add this repository via HACS Custom repositories
+
+https://github.com/Thyraz/pqina-flip-clock-card
+
+([How to add Custom Repositories](https://hacs.xyz/docs/faq/custom_repositories/))
 
 ## Configuration
 
