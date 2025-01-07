@@ -176,8 +176,9 @@ export class PqinaFlipClock extends LitElement {
   }
 
   // Called each second by the flip-clock timer to update the shwon values
-  getClockValue() : ClockValue {
-    const date = Tick.helper.date();
+  getClockValue(): ClockValue {
+    const timeZone = this.config?.timeZone ?? this.hass?.config?.time_zone;
+    const date = new Date(new Date().toLocaleString("en-US", { timeZone }));
 
     const hours = this.config.twentyFourHourFormat ? date.getHours() : date.getHours() % 12 || 12;
     const minutes = date.getMinutes();
