@@ -12,7 +12,7 @@
 import { html, LitElement } from "lit";
 import { state } from "lit/decorators/state";
 import { styles } from "./flip-clock.styles";
-import { HomeAssistant, LovelaceCardConfig, ActionConfig } from "custom-card-helpers";
+import { HomeAssistant, LovelaceCardConfig, ActionConfig, FrontendLocaleData } from "custom-card-helpers";
 
 import Tick from '@pqina/flip';
 
@@ -28,6 +28,10 @@ interface Config extends LovelaceCardConfig {
 
 interface HassEvent extends Event {
   detail
+}
+
+interface LocaleSettings extends FrontendLocaleData {
+  time_zone: string;
 }
 
 // Available CSS options for the card
@@ -177,7 +181,12 @@ export class PqinaFlipClock extends LitElement {
 
   // Called each second by the flip-clock timer to update the shwon values
   getClockValue(): ClockValue {
-    const timeZone = this.config?.timeZone ?? this.hass?.config?.time_zone;
+    const serverTimeZone = this._hass?.config?.time_zone;
+    const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const userLocals = this._hass?.locale as LocaleSettings;
+    const timeZoneSetting = userLocals?.time_zone;
+
+    const timeZone = timeZoneSetting === 'server' ? serverTimeZone : browserTimeZone;
     const date = new Date(new Date().toLocaleString("en-US", { timeZone }));
 
     const hours = this.config.twentyFourHourFormat ? date.getHours() : date.getHours() % 12 || 12;

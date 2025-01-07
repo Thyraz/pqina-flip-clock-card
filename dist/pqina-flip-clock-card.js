@@ -5623,7 +5623,11 @@ class $d6fbcaf2ae884da5$export$9ff5a644c2d64964 extends (0, $ab210b2da7b39b9d$ex
     }
     // Called each second by the flip-clock timer to update the shwon values
     getClockValue() {
-        const timeZone = this.config?.timeZone ?? this.hass?.config?.time_zone;
+        const serverTimeZone = this._hass?.config?.time_zone;
+        const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const userLocals = this._hass?.locale;
+        const timeZoneSetting = userLocals?.time_zone;
+        const timeZone = timeZoneSetting === 'server' ? serverTimeZone : browserTimeZone;
         const date = new Date(new Date().toLocaleString("en-US", {
             timeZone: timeZone
         }));
